@@ -96,6 +96,36 @@
     .north strong { display: block; margin-bottom: 4px; font-size: 13px; }
     .north p { margin: 0; color: var(--ink); font-size: 14px; }
 
+    .deliveries {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .delivery {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 14px;
+      min-height: 148px;
+    }
+    .delivery .tag { margin-bottom: 8px; }
+    .delivery h3 { font-size: 15px; margin-bottom: 8px; }
+    .delivery p { margin: 0; font-size: 13px; color: var(--muted); }
+    .delivery .when {
+      font-size: 12px;
+      font-weight: 650;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .riq {
+      background: var(--ink);
+      color: #fff;
+      padding: 16px 18px;
+      margin-bottom: 32px;
+    }
+    .riq strong { display: block; margin-bottom: 4px; font-size: 13px; }
+    .riq p { margin: 0; font-size: 14px; color: rgba(255,255,255,0.78); }
+
     .section { margin-bottom: 36px; }
     .hint { font-size: 12px; color: var(--faint); margin: 0 0 14px; }
 
@@ -315,7 +345,7 @@
     }
 
     @media (max-width: 860px) {
-      .kpis, .tracks, .align, .pkg { grid-template-columns: 1fr; }
+      .kpis, .tracks, .align, .pkg, .deliveries { grid-template-columns: 1fr; }
       .gantt-axis, .gantt-row { grid-template-columns: 32px 1fr 92px; }
       .gantt-axis .gantt-name, .gantt-row .gantt-name { display: none; }
       .gantt-axis, .gantt-row, .step { grid-template-columns: 1fr; gap: 4px; }
@@ -327,7 +357,7 @@
     @media print {
       body { background: #fff; }
       header.hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .phase, .kpi, .gantt, .track-card, .pkg-item, .align article { break-inside: avoid; }
+      .phase, .kpi, .gantt, .track-card, .pkg-item, .delivery, .riq, .align article { break-inside: avoid; }
       nav.jump { display: none; }
     }
   </style>
@@ -337,11 +367,11 @@
     <div class="wrap">
       <div class="kicker">
         <span class="chip on">BMW / MINI</span>
-        <span class="chip">CS / Europe Q3 15 Oct</span>
-        <span class="chip">Full package 26 Oct</span>
+        <span class="chip">Five report types</span>
+        <span class="chip">Reporting IQ automates all</span>
       </div>
       <h1>Automation process update</h1>
-      <p class="lede">Walkthrough for locking the quarterly, delivering CS regional and Europe Q3 on 15 Oct, and rolling the rest of the BMW / MINI templates package into Reporting IQ.</p>
+      <p class="lede">We are delivering five report types — Q3 market, CS regional &amp; Europe, influencer, weekly and ad hoc. Reporting IQ is the platform that will automate all of them.</p>
     </div>
   </header>
 
@@ -357,28 +387,71 @@
       </div>
       <div class="kpi">
         <div class="when">15 Oct</div>
-        <div class="what">CS regional + Europe Q3 delivered</div>
+        <div class="what">Q3 market + CS / Europe delivered</div>
       </div>
       <div class="kpi live">
         <div class="when">26 Oct</div>
-        <div class="what">Package live in Reporting IQ</div>
+        <div class="what">All report types live in Reporting IQ</div>
       </div>
     </div>
 
     <div class="north">
       <strong>North star — Brandwatch Europe</strong>
-      <p>The market template is built against the Brandwatch Europe dashboard so every relevant metric is in. That dashboard is the metric source of truth. The approved quarterly is the design source of truth for the BMW / MINI templates package — monthly, weekly, influencer and ad hoc follow it.</p>
+      <p>The Q3 market report is built against the Brandwatch Europe dashboard so every relevant metric is in. That dashboard is the metric source of truth. The approved quarterly structure is the design source of truth for every other report type.</p>
+    </div>
+
+    <section class="section" id="deliveries" style="margin-bottom: 10px;">
+      <h2>What we are delivering</h2>
+      <p class="hint">Five separate report types. Same design system. Different job. Each one is a delivery, not a variant we skip.</p>
+      <div class="deliveries">
+        <div class="delivery">
+          <div class="tag">Delivery 1</div>
+          <div class="when">Lock 30 Sep · deliver 15 Oct</div>
+          <h3>Q3 market report</h3>
+          <p>Market quarterly, built on the Brandwatch Europe dashboard. Sample 25 Sep, structure locked 30 Sep, delivered 15 Oct.</p>
+        </div>
+        <div class="delivery">
+          <div class="tag">Delivery 2</div>
+          <div class="when">Review 2 Oct · deliver 15 Oct</div>
+          <h3>CS regional &amp; Europe report</h3>
+          <p>Mar and Marta review 2 Oct, client feedback 7 Oct, in Reporting IQ 7–13 Oct, delivered 15 Oct.</p>
+        </div>
+        <div class="delivery">
+          <div class="tag">Delivery 3</div>
+          <div class="when">Live in Reporting IQ 26 Oct</div>
+          <h3>Influencer report</h3>
+          <p>Same visual system. Focus is talent / creator performance, not the full market story.</p>
+        </div>
+        <div class="delivery">
+          <div class="tag">Delivery 4</div>
+          <div class="when">Live in Reporting IQ 26 Oct</div>
+          <h3>Weekly report</h3>
+          <p>Leaner cut of the same story — built for speed, not a compressed quarterly.</p>
+        </div>
+        <div class="delivery">
+          <div class="tag">Delivery 5</div>
+          <div class="when">Live in Reporting IQ 26 Oct</div>
+          <h3>Ad hoc report</h3>
+          <p>Campaign, event or one-off. Structure holds; depth follows the brief.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="riq" id="riq">
+      <strong>Reporting IQ — one platform for all report types</strong>
+      <p>Reporting IQ is the platform that will support report automation across all five deliveries: Q3 market, CS regional &amp; Europe, influencer, weekly and ad hoc. CS regional &amp; Europe go in first (7–13 Oct). Influencer, weekly and ad hoc follow (19–26 Oct). From 26 Oct, every report type runs from Reporting IQ.</p>
     </div>
 
     <nav class="jump">
+      <a href="#deliveries">Five deliveries</a>
+      <a href="#riq">Reporting IQ</a>
       <a href="#timeline">Timeline</a>
       <a href="#p01">01 Align</a>
       <a href="#p02">02 Lock</a>
-      <a href="#p03">03 CS / Europe Q3</a>
-      <a href="#p03b">3b Rest of package</a>
-      <a href="#p04">04 Reporting IQ</a>
+      <a href="#p03">03 CS / Europe</a>
+      <a href="#p03b">3b Other report types</a>
+      <a href="#p04">04 All types in RIQ</a>
       <a href="#p05">05 Live</a>
-      <a href="#package">Templates package</a>
       <a href="#today">Align today</a>
     </nav>
 
@@ -429,7 +502,7 @@
         </div>
         <div class="gantt-row">
           <div class="gantt-id">3b</div>
-          <div class="gantt-name">Rest of templates package</div>
+          <div class="gantt-name">Influencer, weekly, ad hoc</div>
           <div class="track">
             <i class="vline" style="left: calc(8 / 35 * 100%)"></i>
             <i class="vline" style="left: calc(23 / 35 * 100%)"></i>
@@ -439,7 +512,7 @@
         </div>
         <div class="gantt-row">
           <div class="gantt-id">04</div>
-          <div class="gantt-name">Rest of package into RIQ</div>
+          <div class="gantt-name">All types into Reporting IQ</div>
           <div class="track">
             <i class="vline" style="left: calc(8 / 35 * 100%)"></i>
             <i class="vline" style="left: calc(23 / 35 * 100%)"></i>
@@ -544,10 +617,10 @@
           <div class="num">03</div>
           <div class="phase-meta">
             <div class="phase-top">
-              <h3>CS regional + Europe Q3 — first delivery</h3>
+              <h3>15 Oct deliveries — Q3 market + CS regional &amp; Europe</h3>
               <div class="phase-win">2 – 15 Oct</div>
             </div>
-            <p class="phase-intent">This is the first live cut. CS regional report and Europe Q3 templates go to Mar and Marta on 2 Oct, get client feedback on 7 Oct, land in Reporting IQ by 13 Oct, and are delivered on 15 Oct.</p>
+            <p class="phase-intent">Two deliveries on 15 Oct: the Q3 market report, and the CS regional &amp; Europe report. CS regional &amp; Europe go to Mar and Marta on 2 Oct, get client feedback on 7 Oct, and land in Reporting IQ by 13 Oct.</p>
           </div>
         </div>
         <div class="steps">
@@ -582,8 +655,17 @@
             <div class="step-date">15 Oct</div>
             <div class="dot"></div>
             <div>
+              <p class="step-title">Deliver the Q3 market report</p>
+              <p class="step-detail">The market quarterly is a delivery on 15 Oct, separate from CS regional &amp; Europe.</p>
+            </div>
+            <div class="step-owner">Client delivery</div>
+          </div>
+          <div class="step gate">
+            <div class="step-date">15 Oct</div>
+            <div class="dot"></div>
+            <div>
               <p class="step-title">Deliver CS regional and Europe Q3 reports</p>
-              <p class="step-detail">CS regional report and Europe Q3 reports go to the client. This is the 15 Oct delivery — not the full templates package.</p>
+              <p class="step-detail">CS regional &amp; Europe is a second 15 Oct delivery. Influencer, weekly and ad hoc are not part of this date.</p>
             </div>
             <div class="step-owner">Client delivery</div>
           </div>
@@ -595,10 +677,10 @@
           <div class="num">3b</div>
           <div class="phase-meta">
             <div class="phase-top">
-              <h3>Rest of the BMW / MINI templates package</h3>
+              <h3>Influencer, weekly and ad hoc reports</h3>
               <div class="phase-win">1 – 15 Oct</div>
             </div>
-            <p class="phase-intent">Monthly, weekly, influencer and ad hoc keep building in parallel. They follow the same standard, but they are not the 15 Oct delivery.</p>
+            <p class="phase-intent">These are three further deliveries. They follow the same standard as Q3 market and CS regional &amp; Europe, and they go live in Reporting IQ after 15 Oct.</p>
           </div>
         </div>
         <div class="steps">
@@ -615,8 +697,8 @@
             <div class="step-date">1 – 10 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Build the rest of the BMW / MINI templates package</p>
-              <p class="step-detail">Monthly, weekly, influencer and ad hoc — directed by the client-approved quarterly. Same design, structure and visualisation; adapted to what each report needs to show.</p>
+              <p class="step-title">Build influencer, weekly and ad hoc reports</p>
+              <p class="step-detail">Three additional report types, directed by the approved Q3 market structure. Same design and visualisation; adapted to what each report needs to show.</p>
             </div>
             <div class="step-owner">Delivery</div>
           </div>
@@ -624,8 +706,8 @@
             <div class="step-date">13 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Share the remaining templates package with Mar and Marta</p>
-              <p class="step-detail">Internal approval of monthly, weekly, influencer and ad hoc. CS regional and Europe Q3 have already been reviewed on 2 Oct.</p>
+              <p class="step-title">Share influencer, weekly and ad hoc with Mar and Marta</p>
+              <p class="step-detail">Internal approval of these three report types. Q3 market and CS regional &amp; Europe have already been reviewed.</p>
             </div>
             <div class="step-owner">Mar, Marta</div>
           </div>
@@ -637,10 +719,10 @@
           <div class="num">04</div>
           <div class="phase-meta">
             <div class="phase-top">
-              <h3>Into Reporting IQ</h3>
+              <h3>All report types into Reporting IQ</h3>
               <div class="phase-win">19 – 26 Oct</div>
             </div>
-            <p class="phase-intent">CS regional and Europe Q3 are already in Reporting IQ from 13 Oct. This window is the rest of the BMW / MINI templates package.</p>
+            <p class="phase-intent">Reporting IQ is the automation platform for every report type. CS regional &amp; Europe are already in from 13 Oct. This window adds influencer, weekly and ad hoc, so all five deliveries run from one platform.</p>
           </div>
         </div>
         <div class="steps">
@@ -648,8 +730,8 @@
             <div class="step-date">19 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Receive final feedback on the remaining templates</p>
-              <p class="step-detail">Last structured review of monthly, weekly, influencer and ad hoc. CS regional and Europe Q3 were already locked on 7 Oct.</p>
+              <p class="step-title">Receive final feedback on influencer, weekly and ad hoc</p>
+              <p class="step-detail">Last structured review of these three report types. Q3 market was locked 30 Sep. CS regional &amp; Europe were locked 7 Oct.</p>
             </div>
             <div class="step-owner">Client feedback</div>
           </div>
@@ -657,8 +739,8 @@
             <div class="step-date">19 – 23 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Implement remaining templates into Reporting IQ</p>
-              <p class="step-detail">Apply agreed edits to monthly, weekly, influencer and ad hoc, then wire them into Reporting IQ alongside CS regional and Europe Q3.</p>
+              <p class="step-title">Implement influencer, weekly and ad hoc in Reporting IQ</p>
+              <p class="step-detail">Wire these three report types into Reporting IQ, alongside Q3 market and CS regional &amp; Europe, so the platform covers all deliveries.</p>
             </div>
             <div class="step-owner">Delivery</div>
           </div>
@@ -666,8 +748,8 @@
             <div class="step-date">26 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Start using the full package in Reporting IQ</p>
-              <p class="step-detail">From this week, this is how BMW / MINI reporting runs.</p>
+              <p class="step-title">Start using all report types in Reporting IQ</p>
+              <p class="step-detail">From this week, Q3 market, CS regional &amp; Europe, influencer, weekly and ad hoc all run from Reporting IQ.</p>
             </div>
             <div class="step-owner">Go-live</div>
           </div>
@@ -690,8 +772,8 @@
             <div class="step-date">26 Oct+</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Refinements across the BMW / MINI templates package</p>
-              <p class="step-detail">Continuous improvement on the live package, not a second design cycle.</p>
+              <p class="step-title">Refinements across all report types</p>
+              <p class="step-detail">Continuous improvement in Reporting IQ, not a second design cycle.</p>
             </div>
             <div class="step-owner">Ongoing</div>
           </div>
@@ -700,57 +782,25 @@
     </section>
 
     <section class="section">
-      <h2>Three tracks, one process</h2>
+      <h2>How the deliveries land</h2>
       <div class="tracks">
         <div class="track-card">
-          <div class="label">Track A <span>30 Sep</span></div>
-          <h3>Q3 structure lock</h3>
-          <p class="path">25 Sep sample → 30 Sep lock</p>
-          <p>Freeze the quarterly first. CS regional and Europe Q3 are built against that lock.</p>
+          <div class="label">Q3 market report <span>15 Oct</span></div>
+          <h3>Market quarterly</h3>
+          <p class="path">25 Sep sample → 30 Sep lock → 15 Oct delivery</p>
+          <p>One of the 15 Oct deliveries. Built on Brandwatch Europe. Structure freeze on 30 Sep.</p>
         </div>
         <div class="track-card">
-          <div class="label">Track B <span>15 Oct</span></div>
-          <h3>CS regional + Europe Q3</h3>
+          <div class="label">CS regional &amp; Europe <span>15 Oct</span></div>
+          <h3>Second 15 Oct delivery</h3>
           <p class="path">2 Oct Mar / Marta → 7 Oct client → 7–13 Oct Reporting IQ → 15 Oct delivery</p>
-          <p>This is the 15 Oct delivery. These two templates are reviewed, approved and implemented in Reporting IQ before any other report type.</p>
+          <p>Reviewed and implemented in Reporting IQ before influencer, weekly and ad hoc.</p>
         </div>
         <div class="track-card">
-          <div class="label">Track C <span>26 Oct</span></div>
-          <h3>Rest of the templates package</h3>
-          <p class="path">1–10 Oct build → 13 Oct Mar / Marta → 19 Oct client → 26 Oct live</p>
-          <p>Monthly, weekly, influencer and ad hoc follow the same standard, and go live in Reporting IQ after the CS / Europe Q3 delivery.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="package">
-      <h2>BMW / MINI templates package</h2>
-      <p class="hint">One visual system. Five report types. The quarterly sets the standard; the others adapt.</p>
-      <div class="pkg">
-        <div class="pkg-item lead">
-          <div class="tag">North star</div>
-          <h3>Quarterly / market</h3>
-          <p>Full metric set from Brandwatch Europe. Client-approved structure. Everything else follows this.</p>
-        </div>
-        <div class="pkg-item">
-          <div class="tag">Follows quarterly</div>
-          <h3>Monthly</h3>
-          <p>Same structure and visualisation, scoped to the month.</p>
-        </div>
-        <div class="pkg-item">
-          <div class="tag">Follows quarterly</div>
-          <h3>Weekly</h3>
-          <p>Leaner cut of the same story — built for speed, not a compressed quarterly.</p>
-        </div>
-        <div class="pkg-item">
-          <div class="tag">Follows quarterly</div>
-          <h3>Influencer</h3>
-          <p>Visual system holds. Focus shifts to talent / creator performance.</p>
-        </div>
-        <div class="pkg-item">
-          <div class="tag">Follows quarterly</div>
-          <h3>Ad hoc</h3>
-          <p>Campaign, event or one-off. Structure holds; depth follows the brief.</p>
+          <div class="label">Influencer · weekly · ad hoc <span>26 Oct</span></div>
+          <h3>Remaining three deliveries</h3>
+          <p class="path">1–10 Oct build → 13 Oct Mar / Marta → 19 Oct client → 26 Oct live in Reporting IQ</p>
+          <p>Three further report types. Same standard. Automated in Reporting IQ with the rest.</p>
         </div>
       </div>
     </section>
@@ -764,11 +814,11 @@
         </article>
         <article>
           <h3>2. Decision dates</h3>
-          <p>30 Sep locks the Q3 structure. 7 Oct is final client feedback on CS regional and Europe Q3 templates. 19 Oct is final feedback on the rest of the package.</p>
+          <p>30 Sep locks the Q3 market report. 7 Oct is final client feedback on CS regional &amp; Europe. 19 Oct is final feedback on influencer, weekly and ad hoc.</p>
         </article>
         <article>
           <h3>3. Consistency rule</h3>
-          <p>Once the quarterly is approved, the BMW / MINI templates package follows it. We adapt depth and focus; we do not invent a new design per cadence.</p>
+          <p>Once the Q3 market report is approved, influencer, weekly, ad hoc and CS regional &amp; Europe follow the same design and structure. We adapt depth and focus; we do not invent a new design per report type. All five run from Reporting IQ.</p>
         </article>
       </div>
     </section>
