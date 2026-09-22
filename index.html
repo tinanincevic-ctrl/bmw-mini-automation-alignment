@@ -106,7 +106,7 @@
     }
     .gantt-axis, .gantt-row {
       display: grid;
-      grid-template-columns: 32px 248px minmax(0, 1fr) 92px;
+      grid-template-columns: 32px 260px minmax(0, 1fr) 92px;
       gap: 12px;
       align-items: center;
     }
@@ -237,7 +237,7 @@
       white-space: nowrap;
     }
 
-    .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .tracks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
     .track-card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -337,11 +337,11 @@
     <div class="wrap">
       <div class="kicker">
         <span class="chip on">BMW / MINI</span>
-        <span class="chip">Q3 delivery 15 Oct</span>
-        <span class="chip">Reporting IQ 26 Oct</span>
+        <span class="chip">CS / Europe Q3 15 Oct</span>
+        <span class="chip">Full package 26 Oct</span>
       </div>
       <h1>Automation process update</h1>
-      <p class="lede">Walkthrough for locking the quarterly, delivering Q3, and rolling the BMW / MINI templates package into Reporting IQ.</p>
+      <p class="lede">Walkthrough for locking the quarterly, delivering CS regional and Europe Q3 on 15 Oct, and rolling the rest of the BMW / MINI templates package into Reporting IQ.</p>
     </div>
   </header>
 
@@ -357,7 +357,7 @@
       </div>
       <div class="kpi">
         <div class="when">15 Oct</div>
-        <div class="what">Q3 reports delivered</div>
+        <div class="what">CS regional + Europe Q3 delivered</div>
       </div>
       <div class="kpi live">
         <div class="when">26 Oct</div>
@@ -374,7 +374,8 @@
       <a href="#timeline">Timeline</a>
       <a href="#p01">01 Align</a>
       <a href="#p02">02 Lock</a>
-      <a href="#p03">03 Delivery + package</a>
+      <a href="#p03">03 CS / Europe Q3</a>
+      <a href="#p03b">3b Rest of package</a>
       <a href="#p04">04 Reporting IQ</a>
       <a href="#p05">05 Live</a>
       <a href="#package">Templates package</a>
@@ -418,7 +419,17 @@
         </div>
         <div class="gantt-row">
           <div class="gantt-id">03</div>
-          <div class="gantt-name">Q3 delivery + templates package</div>
+          <div class="gantt-name">CS regional + Europe Q3</div>
+          <div class="track">
+            <i class="vline" style="left: calc(8 / 35 * 100%)"></i>
+            <i class="vline" style="left: calc(23 / 35 * 100%)"></i>
+            <div class="bar is-gate" style="left: calc(10 / 35 * 100%); width: calc(14 / 35 * 100%)"></div>
+          </div>
+          <div class="gantt-win">2 – 15 Oct</div>
+        </div>
+        <div class="gantt-row">
+          <div class="gantt-id">3b</div>
+          <div class="gantt-name">Rest of templates package</div>
           <div class="track">
             <i class="vline" style="left: calc(8 / 35 * 100%)"></i>
             <i class="vline" style="left: calc(23 / 35 * 100%)"></i>
@@ -428,7 +439,7 @@
         </div>
         <div class="gantt-row">
           <div class="gantt-id">04</div>
-          <div class="gantt-name">Into Reporting IQ</div>
+          <div class="gantt-name">Rest of package into RIQ</div>
           <div class="track">
             <i class="vline" style="left: calc(8 / 35 * 100%)"></i>
             <i class="vline" style="left: calc(23 / 35 * 100%)"></i>
@@ -533,10 +544,61 @@
           <div class="num">03</div>
           <div class="phase-meta">
             <div class="phase-top">
-              <h3>Q3 delivery and BMW / MINI templates package</h3>
+              <h3>CS regional + Europe Q3 — first delivery</h3>
+              <div class="phase-win">2 – 15 Oct</div>
+            </div>
+            <p class="phase-intent">This is the first live cut. CS regional report and Europe Q3 templates go to Mar and Marta on 2 Oct, get client feedback on 7 Oct, land in Reporting IQ by 13 Oct, and are delivered on 15 Oct.</p>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step gate">
+            <div class="step-date">2 Oct</div>
+            <div class="dot"></div>
+            <div>
+              <p class="step-title">Share CS regional report and Europe Q3 templates with Mar and Marta</p>
+              <p class="step-detail">Internal review of the CS regional report and the Europe Q3 templates before they go to the client.</p>
+            </div>
+            <div class="step-owner">Mar, Marta</div>
+          </div>
+          <div class="step gate">
+            <div class="step-date">7 Oct</div>
+            <div class="dot"></div>
+            <div>
+              <p class="step-title">Final client feedback on CS regional report and Europe Q3 templates</p>
+              <p class="step-detail">Lock these two templates. After 7 Oct, comments on CS regional and Europe Q3 are treated as tweaks, not a rebuild.</p>
+            </div>
+            <div class="step-owner">Client feedback</div>
+          </div>
+          <div class="step">
+            <div class="step-date">7 – 13 Oct</div>
+            <div class="dot"></div>
+            <div>
+              <p class="step-title">Implement CS regional report and Europe Q3 templates in Reporting IQ</p>
+              <p class="step-detail">Wire the approved CS regional and Europe Q3 templates into the Reporting IQ platform so they are live for the 15 Oct delivery.</p>
+            </div>
+            <div class="step-owner">Delivery</div>
+          </div>
+          <div class="step gate">
+            <div class="step-date">15 Oct</div>
+            <div class="dot"></div>
+            <div>
+              <p class="step-title">Deliver CS regional and Europe Q3 reports</p>
+              <p class="step-detail">CS regional report and Europe Q3 reports go to the client. This is the 15 Oct delivery — not the full templates package.</p>
+            </div>
+            <div class="step-owner">Client delivery</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="phase" id="p03b">
+        <div class="phase-head">
+          <div class="num">3b</div>
+          <div class="phase-meta">
+            <div class="phase-top">
+              <h3>Rest of the BMW / MINI templates package</h3>
               <div class="phase-win">1 – 15 Oct</div>
             </div>
-            <p class="phase-intent">Ship Q3 against the locked quarterly, and build the rest of the package from that same standard.</p>
+            <p class="phase-intent">Monthly, weekly, influencer and ad hoc keep building in parallel. They follow the same standard, but they are not the 15 Oct delivery.</p>
           </div>
         </div>
         <div class="steps">
@@ -544,8 +606,8 @@
             <div class="step-date">1 – 13 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Tweaks and Q3 delivery prep</p>
-              <p class="step-detail">Work through remaining retweaks and prepare Q3 market reports.</p>
+              <p class="step-title">Tweaks and remaining Q3 prep</p>
+              <p class="step-detail">Work through remaining retweaks around the CS regional and Europe Q3 lock.</p>
             </div>
             <div class="step-owner">Delivery</div>
           </div>
@@ -553,7 +615,7 @@
             <div class="step-date">1 – 10 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Build the BMW / MINI templates package</p>
+              <p class="step-title">Build the rest of the BMW / MINI templates package</p>
               <p class="step-detail">Monthly, weekly, influencer and ad hoc — directed by the client-approved quarterly. Same design, structure and visualisation; adapted to what each report needs to show.</p>
             </div>
             <div class="step-owner">Delivery</div>
@@ -562,19 +624,10 @@
             <div class="step-date">13 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Share the package with Mar and Marta</p>
-              <p class="step-detail">Internal approval of the full BMW / MINI templates package.</p>
+              <p class="step-title">Share the remaining templates package with Mar and Marta</p>
+              <p class="step-detail">Internal approval of monthly, weekly, influencer and ad hoc. CS regional and Europe Q3 have already been reviewed on 2 Oct.</p>
             </div>
             <div class="step-owner">Mar, Marta</div>
-          </div>
-          <div class="step gate">
-            <div class="step-date">15 Oct</div>
-            <div class="dot"></div>
-            <div>
-              <p class="step-title">Q3 reports delivered</p>
-              <p class="step-detail">Market reports go to the client.</p>
-            </div>
-            <div class="step-owner">Client delivery</div>
           </div>
         </div>
       </article>
@@ -587,7 +640,7 @@
               <h3>Into Reporting IQ</h3>
               <div class="phase-win">19 – 26 Oct</div>
             </div>
-            <p class="phase-intent">Final client pass, then the package becomes the live process.</p>
+            <p class="phase-intent">CS regional and Europe Q3 are already in Reporting IQ from 13 Oct. This window is the rest of the BMW / MINI templates package.</p>
           </div>
         </div>
         <div class="steps">
@@ -595,8 +648,8 @@
             <div class="step-date">19 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Receive final feedback on the templates package</p>
-              <p class="step-detail">Last structured review before implementation.</p>
+              <p class="step-title">Receive final feedback on the remaining templates</p>
+              <p class="step-detail">Last structured review of monthly, weekly, influencer and ad hoc. CS regional and Europe Q3 were already locked on 7 Oct.</p>
             </div>
             <div class="step-owner">Client feedback</div>
           </div>
@@ -604,8 +657,8 @@
             <div class="step-date">19 – 23 Oct</div>
             <div class="dot"></div>
             <div>
-              <p class="step-title">Implement changes across the package and into Reporting IQ</p>
-              <p class="step-detail">Apply agreed edits once, then wire the package into Reporting IQ.</p>
+              <p class="step-title">Implement remaining templates into Reporting IQ</p>
+              <p class="step-detail">Apply agreed edits to monthly, weekly, influencer and ad hoc, then wire them into Reporting IQ alongside CS regional and Europe Q3.</p>
             </div>
             <div class="step-owner">Delivery</div>
           </div>
@@ -647,19 +700,25 @@
     </section>
 
     <section class="section">
-      <h2>Two tracks, one process</h2>
+      <h2>Three tracks, one process</h2>
       <div class="tracks">
         <div class="track-card">
-          <div class="label">Track A <span>15 Oct</span></div>
-          <h3>Q3 market reports</h3>
-          <p class="path">25 Sep sample → 30 Sep lock → 15 Oct delivery</p>
-          <p>Q3 does not wait for the full package. We freeze the quarterly first, produce Q3 against that lock, then keep polishing around delivery.</p>
+          <div class="label">Track A <span>30 Sep</span></div>
+          <h3>Q3 structure lock</h3>
+          <p class="path">25 Sep sample → 30 Sep lock</p>
+          <p>Freeze the quarterly first. CS regional and Europe Q3 are built against that lock.</p>
         </div>
         <div class="track-card">
-          <div class="label">Track B <span>26 Oct</span></div>
-          <h3>BMW / MINI templates package</h3>
+          <div class="label">Track B <span>15 Oct</span></div>
+          <h3>CS regional + Europe Q3</h3>
+          <p class="path">2 Oct Mar / Marta → 7 Oct client → 7–13 Oct Reporting IQ → 15 Oct delivery</p>
+          <p>This is the 15 Oct delivery. These two templates are reviewed, approved and implemented in Reporting IQ before any other report type.</p>
+        </div>
+        <div class="track-card">
+          <div class="label">Track C <span>26 Oct</span></div>
+          <h3>Rest of the templates package</h3>
           <p class="path">1–10 Oct build → 13 Oct Mar / Marta → 19 Oct client → 26 Oct live</p>
-          <p>Quarterly is the directional template. The rest of the package stays consistent in design, structure and visualisation, with a clear adaptation per report type.</p>
+          <p>Monthly, weekly, influencer and ad hoc follow the same standard, and go live in Reporting IQ after the CS / Europe Q3 delivery.</p>
         </div>
       </div>
     </section>
@@ -704,8 +763,8 @@
           <p>Brandwatch Europe decides which metrics sit in the market template. We do not add or drop KPIs market by market.</p>
         </article>
         <article>
-          <h3>2. Two decision dates</h3>
-          <p>30 Sep locks the Q3 structure. 19 Oct is final package feedback. After those dates, comments are refinements, not a rebuild.</p>
+          <h3>2. Decision dates</h3>
+          <p>30 Sep locks the Q3 structure. 7 Oct is final client feedback on CS regional and Europe Q3 templates. 19 Oct is final feedback on the rest of the package.</p>
         </article>
         <article>
           <h3>3. Consistency rule</h3>
